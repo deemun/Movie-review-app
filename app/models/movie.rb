@@ -1,6 +1,7 @@
 class Movie < ActiveRecord::Base
 
    has_many :reviews
+   mount_uploader :image, ImageUploader
 
 	validates :title,
         presence: true

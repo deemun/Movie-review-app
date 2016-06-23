@@ -1,5 +1,5 @@
 <h1>Rotten Tomatoes</h1>
-<%= link_to "Submit a movie!", new_movie_path, class: "bootstrap-button"%>
+<%= link_to "Submit a movie!", new_movie_path, class: "bootstrap-button"%>  <!--link takes 2 things, link name/image, and then where link goes-->
 <%#comment for erb %>
 <!--new_movie_path just add _path to any page and it links to it-->
 
@@ -11,5 +11,6 @@
 	<h3><%= movie.release_date %></h3>
       <h4>Dir. <%= movie.director %> | <%= movie.runtime_in_minutes %> minutes</h4>
       <p><%= movie.description %></p>
+      <%= image_tag movie.image_url %>
       <hr>
     <% end %>
