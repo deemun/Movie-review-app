@@ -1,12 +1,12 @@
 <h1>Rotten Tomatoes</h1>
-<%= link_to "Submit a movie!", new_movie_path %> 
+<%= link_to "Submit a movie!", new_movie_path, class: "bootstrap-button"%>
 <%#comment for erb %>
 <!--new_movie_path just add _path to any page and it links to it-->
 
 <!--this is an html comment -->
 <hr>
 <%@movies.each do |movie| %>
-	<%= link_to image_tag(movie.poster_image_url), movie_path(movie) %>
+	<%= link_to image_tag(movie.poster_image_url), movie_path(movie) %>  <!-- link to and _path all helper methods generated to make stuff EZ-->
 	<h2><%= link_to movie.title, movie_path(movie) %></h2>
 	<h3><%= movie.release_date %></h3>
       <h4>Dir. <%= movie.director %> | <%= movie.runtime_in_minutes %> minutes</h4>

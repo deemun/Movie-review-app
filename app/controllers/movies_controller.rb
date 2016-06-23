@@ -45,7 +45,7 @@ class MoviesController < ApplicationController
 
  protected
 
- def movie_params
+ def movie_params   #created so that user can only update column fields that we specify, security reasons. 
  	params.require(:movie).permit(
  		:title, :release_date, :director, :runtime_in_minutes, :poster_image_url, :description
  		)
