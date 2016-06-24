@@ -5,4 +5,13 @@ class Admin::UsersController < ApplicationController
   	@users = User.all
   end
 
+
+  def destroy
+  	user = User.find(params[:id])
+  	@user = user.destroy
+  end
+
 end
+
+
+<a href="/admin/users/1"/>
