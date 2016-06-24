@@ -10,7 +10,7 @@ RottenMango::Application.routes.draw do
   get "users/new"
   get "users/create"
 
-      resources :users
+      # resources :users
       resources :movies do
         resources :reviews, only: [:new, :create]
       end
