@@ -29,12 +29,23 @@
           </ul>
         </li>
       </ul>
-      <form class="navbar-form navbar-left" role="search">
+   
+        
+        <%= form_tag(search_movies_path, method: "get", class: "navbar-form navbar-left" ) do %>
         <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
-        </div>
-        <button type="submit" class="btn btn-default">Submit</button>
-      </form>
+          <%= label_tag(:q, "Title:") %>
+          <%= text_field_tag(:q) %>
+           <%= label_tag(:p, "Director:") %>
+          <%= text_field_tag(:p) %>
+          
+
+          <%= submit_tag "Search", class: "btn btn-primary" %>
+          </div>
+        <% end %>
+          
+        
+        
+      
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#">Link</a></li>
         <li class="dropdown">
@@ -51,6 +62,10 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
+
+
+
+
 <%= link_to "Submit a movie!", new_movie_path, class: "bootstrap-button"%>  <!--link takes 2 things, link name/image, and then where link goes-->
 <%#comment for erb %>
 <!--new_movie_path just add _path to any page and it links to it-->

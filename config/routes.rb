@@ -1,6 +1,6 @@
 RottenMango::Application.routes.draw do
  
-  get "sessions/new"
+  get "sessions/new"    #custom routes created by user
   get "sessions/create"
   get "users/new"
   get "users/create"
@@ -9,10 +9,14 @@ RottenMango::Application.routes.draw do
   get "sessions/create"
   get "users/new"
   get "users/create"
+  # get "movies/search" manually added search route
 
       # resources :users
       resources :movies do
         resources :reviews, only: [:new, :create]
+        collection do  #collections when dealing with entire movies
+          get 'search'
+        end
       end
       
       namespace :admin do
