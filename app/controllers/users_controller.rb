@@ -2,7 +2,7 @@ class UsersController < ApplicationController
  
  def new
         @user = User.new
-      end
+ end
 
       def create
         @user = User.new(user_params)
@@ -11,7 +11,8 @@ class UsersController < ApplicationController
         	session[:user_id] = @user.id # auto log in
           redirect_to movies_path, notice: "Welcome aboard, #{@user.firstname}!"
         else
-          render :new
+          # redirect_to users_new_path
+          redirect_to 'www.google.com'
         end
       end
 

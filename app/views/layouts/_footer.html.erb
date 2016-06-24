@@ -1,9 +1,14 @@
     <footer>
       <small>
+      <div class="footer navbar-fixed-bottom" style="text-align:right; font-size: 25px;">
         <% if current_user %>
           Signed in as <%= current_user.full_name %> (<%= link_to "Log out", session_path("current"), method: :delete %>)
+          <% if current_user.admin %>
+          	hello admin put link to dashboard here
+          <% end %>
         <% else %>
-          <%= link_to "Log In", new_session_path %> | <%= link_to "Sign Up", new_user_path %>
+          <%= link_to "Log In", new_session_path %> | <%= link_to "Sign Up", users_new_path %>
         <% end %>
+        </div>
       </small>
     </footer>
