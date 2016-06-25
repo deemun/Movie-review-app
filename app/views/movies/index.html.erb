@@ -8,7 +8,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Rotten Mangoes</a>
+      <a class="navbar-brand" href="<%=root_path%>">Rotten Mangoes</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -37,7 +37,9 @@
           <%= text_field_tag(:q) %>
            <%= label_tag(:p, "Director:") %>
           <%= text_field_tag(:p) %>
+          <%= select_tag :o, options_from_collection_for_select(@movies, "runtime_in_minutes", "runtime_in_minutes") %>
           
+
 
           <%= submit_tag "Search", class: "btn btn-primary" %>
           </div>
@@ -66,12 +68,13 @@
 
 
 
-<%= link_to "Submit a movie!", new_movie_path, class: "bootstrap-button"%>  <!--link takes 2 things, link name/image, and then where link goes-->
+<%= link_to "Submit a movie!", new_movie_path, class: "btn btn-success"%>  <!--link takes 2 things, link name/image, and then where link goes-->
 <%#comment for erb %>
 <!--new_movie_path just add _path to any page and it links to it-->
 
 <!--this is an html comment -->
 <hr>
+<div class="container">
 <%@movies.each do |movie| %>
 	  <!-- link to and _path all helper methods generated to make stuff EZ-->
 	<h2><%= link_to movie.title, movie_path(movie) %></h2>
@@ -81,3 +84,4 @@
       <%= image_tag movie.image_url(:thumb) %> 
       <hr>
     <% end %>
+</div>

@@ -42,9 +42,9 @@ class MoviesController < ApplicationController
  end
 
  def search
-  @movies = Movie.where("title LIKE ? AND director LIKE ?", "%#{params[:q]}%", "%#{params[:p]}") #called q because its short.
+  @movies = Movie.where("title LIKE ? AND director LIKE ? AND runtime_in_minutes LIKE ?", "%#{params[:q]}%", "%#{params[:p]}", "%#{params[:o]}") #called q because its short.
   render :index #calling index.html.erb
- 
+  
  end
  
 
